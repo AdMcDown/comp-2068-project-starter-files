@@ -8,7 +8,7 @@ import { NotificationContext } from '../../shared/Notifications';
 import { Redirect } from 'react-router-dom';
 
 const UserForm = ({ endpoint, preloadData = {}, buttonLabel }) => {
-  const { globalStore } = useContext(GlobalStoreContext);    
+  const { globalStore } = useContext(GlobalStoreContext);
   const { user, setUser } = useContext(UserContext);
   const { setNotification } = useContext(NotificationContext);
 
@@ -17,7 +17,7 @@ const UserForm = ({ endpoint, preloadData = {}, buttonLabel }) => {
     emailConfirmation: (preloadData && preloadData.email)
   });
   const [redirect, setRedirect] = useState(false);
-  
+
   const handleChange = event => {
     event.persist();
     setInputs({
@@ -34,94 +34,95 @@ const UserForm = ({ endpoint, preloadData = {}, buttonLabel }) => {
         ...inputs,
         secret_token: (user && user.token)
       })
-      .then(({ data }) => {
-        if (data && data.token) setUser(data);
+        .then(({ data }) => {
+          if (data && data.token) setUser(data);
 
-        setNotification({
-          type: "success",
-          message: "This action was performed successfully."
+          //also info - blue, danger - red, warning - yellow
+          setNotification({
+            type: "success",
+            message: "This action was performed successfully."
+          });
+
+          setRedirect(true);
+        })
+        .catch(error => {
+          console.error(error.message);
+
+          setNotification({
+            type: "danger",
+            message: `There was an issue performing this action: ${error.message}`
+          });
         });
-
-        setRedirect(true);
-      })
-      .catch(error => {
-        console.error(error.message);
-
-        setNotification({
-          type: "danger",
-          message: `There was an issue performing this action: ${error.message}`
-        });
-      });
     }
   };
 
   return (
     redirect ? (
-      <Redirect to="/Home"/>
+      <Redirect to="/Home" />
     ) : (
-      <Form onSubmit={handleSubmit}>
-        <p>
-          The content is editable under <strong>/src/components/Users/UserForm/index.jsx</strong>
-        </p>
+        <Form onSubmit={handleSubmit}>
+          <p>
+            The content is editable under <strong>/src/components/Users/UserForm/index.jsx</strong>
+          </p>
 
-        <Form.Group>
-          <Form.Label>Name</Form.Label>
-          <Form.Control
-            name="name"
-            onChange={handleChange}
-            required
-            defaultValue={inputs.name}
-          />
-        </Form.Group>
-  
-        <Form.Group>
-          <Form.Label>Email</Form.Label>
-          <Form.Control
-            name="email"
-            onChange={handleChange}
-            required
-            defaultValue={inputs.email}
-          />
-        </Form.Group>
-  
-        <Form.Group>
-          <Form.Label>Email Confirmation</Form.Label>
-          <Form.Control
-            name="emailConfirmation"
-            onChange={handleChange}
-            required
-            defaultValue={inputs.emailConfirmation}
-          />
-        </Form.Group>
-  
-        <Form.Group>
-          <Form.Label>Password</Form.Label>
-          <Form.Control
-            name="password"
-            type="password"
-            onChange={handleChange}
-            required
-            defaultValue={null}
-          />
-        </Form.Group>
-  
-        <Form.Group>
-          <Form.Label>Password Confirmation</Form.Label>
-          <Form.Control
-            name="passwordConfirmation"
-            type="password"
-            onChange={handleChange}
-            required
-            defaultValue={null}
-          />
-        </Form.Group>
-  
-        <Form.Group>
-          <Button type="submit">{ buttonLabel || "Register" }</Button>
-        </Form.Group>
-      </Form>
-    )
+          <Form.Group>
+            <Form.Label>Name</Form.Label>
+            <Form.Control
+              name="name"
+              onChange={handleChange}
+              required
+              defaultValue={inputs.name}
+            />
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              name="email"
+              onChange={handleChange}
+              required
+              defaultValue={inputs.email}
+            />
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Email Confirmation</Form.Label>
+            <Form.Control
+              name="emailConfirmation"
+              onChange={handleChange}
+              required
+              defaultValue={inputs.emailConfirmation}
+            />
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              name="password"
+              type="password"
+              onChange={handleChange}
+              required
+              defaultValue={null}
+            />
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label>Password Confirmation</Form.Label>
+            <Form.Control
+              name="passwordConfirmation"
+              type="password"
+              onChange={handleChange}
+              required
+              defaultValue={null}
+            />
+          </Form.Group>
+
+          <Form.Group>
+            <Button type="submit">{buttonLabel || "Register"}</Button>
+          </Form.Group>
+        </Form>
+      )
   );
 }
- 
+
 export default UserForm;

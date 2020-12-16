@@ -40,6 +40,8 @@ const UserSchema = new mongoose.Schema({
   timestamps: true
 });
 
+
+// wont need for new resource
 UserSchema.virtual('emailConfirmation')
 .get(function () {
   return this._emailConfirmation;
@@ -59,6 +61,7 @@ UserSchema.virtual('password')
   }
   this._password = value;
 });
+// stops here
 
 UserSchema.virtual('passwordConfirmation')
 .get(function () {
