@@ -20,6 +20,17 @@ exports.create = async (req, res, next) => {
     }
 };
 
+exports.show = async (req, res, next) => {
+    try {
+        const quote = await Quote.findById(req.params.id);
+
+        res.status(200).json(quote);
+    }
+    catch (error) {
+        next(error)
+    }
+};
+
 exports.index = async (req, res, next) => {
     try {
         const quotes = await Quote.find();

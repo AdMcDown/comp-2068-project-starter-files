@@ -38,7 +38,11 @@ const Quotes = () => {
               <blockquote>
                 {quote.date}: "{quote.quote}" ~ {quote.author}
               </blockquote>
-              <Link to={`/quotes/edit/${quote._id}`}>...edit...</Link>
+
+              {user && user.token ? (
+                <Link to={`/quotes/edit/${quote._id}`}>...edit...</Link>
+              ) : null}
+
             </>
           ))
         ) : null}

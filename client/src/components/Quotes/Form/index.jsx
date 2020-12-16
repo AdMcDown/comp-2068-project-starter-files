@@ -1,18 +1,22 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Form } from 'react-bootstrap';
 import { NotificationContext } from '../../shared/Notifications';
 import { UserContext } from '../../Authentication/UserProvider';
 import { GlobalStoreContext } from '../../shared/Globals';
 import Axios from 'axios';
-import { Redirect, useParams } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 const QuoteForm = ({ endpoint, preload }) => {
-    const [inputs, setInputs] = useState({ ...preload });
+    console.log(preload);
+    const [inputs, setInputs] = useState({});
+    const [redirect, setRedirect] = useState(false);
     const { setNotification } = useContext(NotificationContext);
     const { user } = useContext(UserContext);
     const { globalStore } = useContext(GlobalStoreContext);
 
-    const { id } = useParams();
+    useEffect(() => {
+        setInputs({ ...preload });
+    }, [preload]);
 
     const handleChange = event => {
         event.persist();
@@ -33,11 +37,11 @@ const QuoteForm = ({ endpoint, preload }) => {
                 if (data) {
                     setNotification({
                         type: "success",
-                        message: "Quote was created successfully"
+                        message: "Quote was updated successfully"
                     });
                 }
 
-                return (<Redirect to="/quotes" />);
+                setRedirect(true);
             })
             .catch((error) => {
                 setNotification({
@@ -46,6 +50,8 @@ const QuoteForm = ({ endpoint, preload }) => {
                 });
             });
     };
+
+    if (redirect) return <Redirect to="/quotes" />
 
     return (
         <Form onSubmit={handleSubmit}>

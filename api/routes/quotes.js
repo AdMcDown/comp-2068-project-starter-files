@@ -1,4 +1,4 @@
-const { create, index, update, destroy } = require('../controllers/quotes');
+const { create, index, show, update, destroy } = require('../controllers/quotes');
 const passport = require('passport');
 
 // const passport = require('passport'); needed to use passport
@@ -7,6 +7,9 @@ module.exports = router => {
 
     //GET localhost:4000/quotes
     router.get('/quotes', index);
+
+    //GET Localhost:4000/quotes/id
+    router.get('/quotes/:id', show);
 
     //POST localhost:4000/quotes
     router.post('/quotes', passport.authenticate('jwt', {session: false}), create);
