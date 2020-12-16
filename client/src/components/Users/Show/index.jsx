@@ -14,10 +14,10 @@ const Show = () => {
 
   useEffect(() => {
     Axios.get(`${globalStore.REACT_APP_ENDPOINT}/users/show?secret_token=${user.token}`)
-    .then(({ data }) => {
-      setUserDetails(data);
-    });
-  }, []);
+      .then(({ data }) => {
+        setUserDetails(data);
+      });
+  }, [globalStore, user]);
 
   return (
     userDetails ? (
@@ -43,6 +43,7 @@ const Show = () => {
               width={150}
               height={150}
               className="mr-3"
+              alt="anything for alternative"
             />
             <Media.Body>
               <h5>{userDetails.name}</h5>
@@ -64,5 +65,5 @@ const Show = () => {
     ) : null
   );
 }
- 
+
 export default Show;

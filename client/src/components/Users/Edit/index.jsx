@@ -12,23 +12,23 @@ const Edit = () => {
 
   useEffect(() => {
     Axios.get(`http://localhost:4000/users/show?secret_token=${user.token}`)
-    .then(({ data }) => {
-      setUserDetails(data);
-    });
-  }, []);
+      .then(({ data }) => {
+        setUserDetails(data);
+      });
+  }, [user]);
 
   return (
     userDetails ? (
       <>
-        <Header title="Edit your profile!"/>
-        
+        <Header title="Edit your profile!" />
+
         <Container>
           <p>
             The content is editable under <strong>/src/components/Users/Edit/index.jsx</strong>
           </p>
 
           <UserForm
-            preloadData={ userDetails }
+            preloadData={userDetails}
             endpoint="/users/update"
             buttonLabel="Update"
           />
@@ -37,5 +37,5 @@ const Edit = () => {
     ) : null
   );
 }
- 
+
 export default Edit;
