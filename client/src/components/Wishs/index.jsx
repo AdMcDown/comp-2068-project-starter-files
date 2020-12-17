@@ -4,7 +4,7 @@ import { GlobalStoreContext } from '../shared/Globals';
 import { UserContext } from '../Authentication/UserProvider';
 import Axios from 'axios';
 import Header from '../shared/Header';
-import { Container } from 'react-bootstrap';
+import { Container, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Wishs = () => {
@@ -33,21 +33,44 @@ const Wishs = () => {
 
       <Container>
         {wishs && wishs.length > 0 ? (
-          wishs.map((wish, i) => (
-            <div key={i}>
-              <blockquote>
-                {wish.item}: "{wish.description}" ~ {wish.creator}
-              </blockquote>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>My Wish</th>
+                <th>Creator</th>
+                <th>Description</th>
+                <th>Action</th>
+              </tr>
+            </thead>
 
-              {user && user.token ? (
-                <div>
-                  <Link to={`/wishs/edit/${wish._id}`}>...edit...</Link>
-                  <Link to={`/wishs/destroy/${wish._id}`}>...delete...</Link>
-                </div>
-              ) : null}
+            <tbody>
+              {wishs.map((wish, i) => (
+                <tr key={i}>
+                  <td>
+                    {wish.item}
+                  </td>
 
-            </div>
-          ))
+                  <td>
+                    {wish.creator}
+                  </td>
+
+                  <td>
+                    {wish.description}
+                  </td>
+
+                  <td>
+                    <Link to={`/wishs/edit/${wish._id}`}>
+                      edit
+                    </Link>
+                    &nbsp;|&nbsp;
+                    <Link to={`/wishs/destroy/${wish._id}`}>
+                      delete
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
         ) : null}
       </Container>
     </>
