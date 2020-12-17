@@ -28,3 +28,8 @@ header {
 nav {
     background-color: rgb(93, 168, 99);
 }
+
+#new-description {
+    display: block;
+    width: 500px;
+}
