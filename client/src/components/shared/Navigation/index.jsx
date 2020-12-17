@@ -24,11 +24,8 @@ const Navigation = () => {
 
   return (
     <Navbar bg="light" expand="lg">
-<<<<<<< Updated upstream
       <Navbar.Brand>My Wishlist</Navbar.Brand>
-=======
-      <Navbar.Brand>MOFO Wish</Navbar.Brand>
->>>>>>> Stashed changes
+
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
