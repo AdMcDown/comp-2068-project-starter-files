@@ -3,7 +3,7 @@ import PageRoutes from '../../Pages/routes';
 import UserRoutes from '../../Users/routes';
 import AuthenticationRoutes from '../../Authentication/routes';
 
-import QuoteRoutes from '../../Quotes/routes';
+import WishRoutes from '../../Wishs/routes';
 
 const Routes = () => {
   return (
@@ -11,7 +11,7 @@ const Routes = () => {
       <PageRoutes />
       <UserRoutes />
       <AuthenticationRoutes />
-      <QuoteRoutes />
+      <WishRoutes />
     </>
   );
 }

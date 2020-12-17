@@ -6,12 +6,12 @@ import { Container } from 'react-bootstrap';
 const New = () => {
     return (
         <>
-            <Header title="Quotes">
+            <Header title="Wishs">
                 Hi I'm a child
             </Header>
 
             <Container>
-                <Form endpoint="quotes" />
+                <Form endpoint="wishs" />
             </Container>
 
         </>

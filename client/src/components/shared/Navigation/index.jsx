@@ -29,11 +29,11 @@ const Navigation = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Link to="/" component={NavLink}>Home</Link>
-          <Link to="/quotes" component={NavLink}>Quotes</Link>
+          <Link to="/wishs" component={NavLink}>Wishs</Link>
 
           {user && user.token ? (
             <>
-              <Link to="/quotes/new" component={NavLink}>New Quote</Link>
+              <Link to="/wishs/new" component={NavLink}>New Wish</Link>
               <Link to="/logout" component={NavLink}>Logout</Link>
             </>
           ) : (

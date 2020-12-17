@@ -11,12 +11,12 @@ const Routes = () => {
 
     return (
         <Switch>
-            <Route exact path="/quotes" component={Index} />
+            <Route exact path="/wishs" component={Index} />
 
             {user && user.token ? (
                 <>
-                    <Route exact path="/quotes/new" component={New} />
-                    <Route exact path="/quotes/edit/:id" component={Edit} />
+                    <Route exact path="/wishs/new" component={New} />
+                    <Route exact path="/wishs/edit/:id" component={Edit} />
                 </>
             ) : null}
         </Switch>

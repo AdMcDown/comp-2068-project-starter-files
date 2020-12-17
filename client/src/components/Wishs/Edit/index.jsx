@@ -14,26 +14,26 @@ const Edit = () => {
     const { setNotification } = useContext(NotificationContext);
 
     useEffect(() => {
-        Axios.get(`${globalStore.REACT_APP_ENDPOINT}/quotes/${id}`)
+        Axios.get(`${globalStore.REACT_APP_ENDPOINT}/wishs/${id}`)
             .then(({ data }) => {
                 setPreload(data);
             })
             .catch(error => {
                 setNotification({
                     type: "danger",
-                    message: `There was an error retrieving the quote: ${error.message}`
+                    message: `There was an error retrieving your wish: ${error.message}`
                 });
             });
     }, [globalStore, id, setNotification]);
 
     return (
         <>
-            <Header title="Quotes">
+            <Header title="Wishs">
                 Hi I'm an edited child
             </Header>
 
             <Container>
-                <Form endpoint="quotes/update" preload={preload} />
+                <Form endpoint="wishs/update" preload={preload} />
             </Container>
 
         </>

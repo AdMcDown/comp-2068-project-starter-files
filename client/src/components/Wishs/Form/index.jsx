@@ -6,7 +6,7 @@ import { GlobalStoreContext } from '../../shared/Globals';
 import Axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-const QuoteForm = ({ endpoint, preload }) => {
+const WishForm = ({ endpoint, preload }) => {
     console.log(preload);
     const [inputs, setInputs] = useState({});
     const [redirect, setRedirect] = useState(false);
@@ -37,7 +37,7 @@ const QuoteForm = ({ endpoint, preload }) => {
                 if (data) {
                     setNotification({
                         type: "success",
-                        message: "Quote was updated successfully"
+                        message: "Your wish was updated successfully"
                     });
                 }
 
@@ -46,30 +46,37 @@ const QuoteForm = ({ endpoint, preload }) => {
             .catch((error) => {
                 setNotification({
                     type: "danger",
-                    message: `There was an error creating the quote: ${error.message}`
+                    message: `There was an error creating your wish: ${error.message}`
                 });
             });
     };
 
-    if (redirect) return <Redirect to="/quotes" />
+    if (redirect) return <Redirect to="/wishs" />
 
     return (
         <Form onSubmit={handleSubmit}>
             <input
                 onChange={handleChange}
-                name="quote"
-                placeholder="quote"
-                defaultValue={inputs.quote}
+                name="item"
+                placeholder="wish list item"
+                defaultValue={inputs.item}
             />
             <input
                 onChange={handleChange}
-                name="date"
-                placeholder="YYYY-MM-DD"
-                defaultValue={inputs.date}
+                name="price"
+                placeholder="enter cost for item"
+                defaultValue={inputs.price}
             />
-            <button type="submit">Submit</button>
+            <textarea
+                onChange={handleChange}
+                name="description"
+                rows={3}
+                placeholder="give a brief description of your wish list item"
+                defaultValue={inputs.description}
+            />
+            <button type="submit">Add to Wish List</button>
         </Form>
     );
 }
 
-export default QuoteForm;
+export default WishForm;

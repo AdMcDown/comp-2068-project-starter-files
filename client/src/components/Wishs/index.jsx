@@ -7,40 +7,40 @@ import Header from '../shared/Header';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Quotes = () => {
+const Wishs = () => {
   const { setNotification } = useContext(NotificationContext);
   const { globalStore } = useContext(GlobalStoreContext);
   const { user } = useContext(UserContext);
 
-  const [quotes, setQuotes] = useState([]);
+  const [wishs, setWishs] = useState([]);
 
   useEffect(() => {
-    Axios.get(`${globalStore.REACT_APP_ENDPOINT}/quotes`)
+    Axios.get(`${globalStore.REACT_APP_ENDPOINT}/wishs`)
       .then(({ data }) => {
-        setQuotes(data);
+        setWishs(data);
       })
       .catch(error => {
         setNotification({
           type: "danger",
-          message: `There was an error retrieving the quotes: ${error.message}`
+          message: `There was an error retrieving your wishs: ${error.message}`
         });
       });
   }, [globalStore, setNotification]);
 
   return (
     <>
-      <Header title="Quotes" />
+      <Header title="Wishs" />
 
       <Container>
-        {quotes && quotes.length > 0 ? (
-          quotes.map((quote, i) => (
+        {wishs && wishs.length > 0 ? (
+          wishs.map((wish, i) => (
             <>
               <blockquote>
-                {quote.date}: "{quote.quote}" ~ {quote.author}
+                {wish.item}: "{wish.description}" ~ {wish.creator}
               </blockquote>
 
               {user && user.token ? (
-                <Link to={`/quotes/edit/${quote._id}`}>...edit...</Link>
+                <Link to={`/wishs/edit/${wish._id}`}>...edit...</Link>
               ) : null}
 
             </>
@@ -51,4 +51,4 @@ const Quotes = () => {
   );
 }
 
-export default Quotes;
+export default Wishs;
