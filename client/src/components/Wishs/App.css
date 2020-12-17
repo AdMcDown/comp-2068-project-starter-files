@@ -2,6 +2,22 @@ body {
     background-color: #6290ec;
   }
 
- #poop {
+ #test {
     color:blue;
+}
+
+#link-color {
+    color: rgb(93, 168, 99)
+}
+
+header {
+    background-color: rgb(93, 168, 99);
+}
+
+#header-cont {
+    background-color: rgb(93, 168, 99);
+}
+
+nav {
+    background-color: rgb(93, 168, 99);
 }

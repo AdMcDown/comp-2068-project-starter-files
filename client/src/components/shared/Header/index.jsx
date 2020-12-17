@@ -7,8 +7,8 @@ const Header = ({title, children}) => {
   });
 
   return (
-    <Container className="my-3">
-      <Jumbotron>
+    <Container className="my-3" >
+      <Jumbotron id ="header-cont">
         <header>
           <h1>{title || 'Default header title if the title property is falsey'}</h1>
           {/* This is a comment in JSX */}
