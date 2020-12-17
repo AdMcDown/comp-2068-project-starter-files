@@ -36,30 +36,30 @@ const Wishs = () => {
         {wishs && wishs.length > 0 ? (
           <Table striped bordered hover>
             <thead>
-              <tr>
-                <th id="test">My Wish</th>
-                <th id="test">Creator</th>
-                <th id="test">Description</th>
-                <th id="test">Action</th>
+              <tr id="titles">
+                <th>My Wish</th>
+                <th>Creator</th>
+                <th>Description</th>
+                <th>Action</th>
               </tr>
             </thead>
 
             <tbody>
               {wishs.map((wish, i) => (
-                <tr key={i}>
-                  <td>
+                <tr key={i} >
+                  <td id = "info">
                     {wish.item}
                   </td>
 
-                  <td>
+                  <td id = "info">
                     {wish.creator}
                   </td>
 
-                  <td>
+                  <td id = "info">
                     {wish.description}
                   </td>
 
-                  <td id ="link-color">
+                  <td>
                     <Link to={`/wishs/edit/${wish._id}`}>
                       edit
                     </Link>

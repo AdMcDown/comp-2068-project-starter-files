@@ -2,19 +2,26 @@ body {
     background-color: #6290ec;
   }
 
- #test {
+ #titles {
+    text-align: center;
     color:blue;
 }
 
-#link-color {
+#info {
+    color: crimson;
+}
+
+link {
     color: rgb(93, 168, 99)
 }
 
 header {
+    text-align: center;
     background-color: rgb(93, 168, 99);
 }
 
 #header-cont {
+    border-radius: 80px;
     background-color: rgb(93, 168, 99);
 }
 
