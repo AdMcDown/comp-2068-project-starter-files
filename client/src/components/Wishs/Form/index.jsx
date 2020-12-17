@@ -62,25 +62,50 @@ const WishForm = ({ endpoint, preload }) => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <input
-                onChange={handleChange}
-                name="item"
-                placeholder="wish list item"
-                defaultValue={inputs.item}
-            />
-            <input
-                onChange={handleChange}
-                name="price"
-                placeholder="enter cost for item"
-                defaultValue={inputs.price}
-            />
-            <textarea
-                onChange={handleChange}
-                name="description"
-                rows={3}
-                placeholder="give a brief description of your wish list item"
-                defaultValue={inputs.description}
-            />
+            <Form.Group>
+                <Form.Label>Your Wish:</Form.Label>
+                <Form.Control
+                    onChange={handleChange}
+                    name="item"
+                    placeholder="wish list item"
+                    defaultValue={inputs.item}
+                />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Price:</Form.Label>
+                <Form.Control
+                    onChange={handleChange}
+                    name="new-price"
+                    id="new-price"
+                    placeholder="enter cost for item"
+                    defaultValue={inputs.price}
+                />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Website</Form.Label>
+                <Form.Control
+                    onChange={handleChange}
+                    name="new-website"
+                    id="new-website"
+                    placeholder="copy a website link to your item"
+                    defaultValue={inputs.websiteLink}
+                />
+            </Form.Group>
+
+            <Form.Group>
+                <Form.Label>Description:</Form.Label>
+                <br />
+                <textarea
+                    onChange={handleChange}
+                    name="description"
+                    id="new-description"
+                    rows={4}
+                    placeholder="give a brief description of your wish list item"
+                    defaultValue={inputs.description}
+                />
+            </Form.Group>
             <button type="submit">Add to Wish List</button>
         </Form>
     );

@@ -36,11 +36,12 @@ const Wishs = () => {
         {wishs && wishs.length > 0 ? (
           <Table striped bordered hover>
             <thead>
-              <tr>
-                <th id="test">My Wish</th>
-                <th id="test">Creator</th>
-                <th id="test">Description</th>
-                <th id="test">Action</th>
+              <tr id="test">
+                <th>My Wish</th>
+                <th>Creator</th>
+                <th>WebLink</th>
+                <th>Description</th>
+                <th>Action</th>
               </tr>
             </thead>
 
@@ -56,10 +57,14 @@ const Wishs = () => {
                   </td>
 
                   <td>
+                    <Link to={wish.websiteLink}>Buy</Link>
+                  </td>
+
+                  <td>
                     {wish.description}
                   </td>
 
-                  <td id ="link-color">
+                  <td id="link-color">
                     <Link to={`/wishs/edit/${wish._id}`}>
                       edit
                     </Link>
