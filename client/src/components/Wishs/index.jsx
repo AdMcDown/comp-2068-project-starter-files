@@ -6,6 +6,7 @@ import Axios from 'axios';
 import Header from '../shared/Header';
 import { Container, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './App.css'
 
 const Wishs = () => {
   const { setNotification } = useContext(NotificationContext);
@@ -36,7 +37,7 @@ const Wishs = () => {
           <Table striped bordered hover>
             <thead>
               <tr>
-                <th>My Wish</th>
+                <th id="poop">My Wish</th>
                 <th>Creator</th>
                 <th>Description</th>
                 <th>Action</th>
