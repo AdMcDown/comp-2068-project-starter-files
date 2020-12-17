@@ -1,6 +1,6 @@
 {
-  "homepage": "https://gcsmckinnon.github.io",
-  "name": "quote-client",
+  "homepage": "https://github.com/AdMcDown/comp-2068-project-starter-files",
+  "name": "wishlist-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
