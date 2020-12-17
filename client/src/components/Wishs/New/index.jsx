@@ -7,7 +7,7 @@ const New = () => {
     return (
         <>
             <Header title="Wishs">
-                Hi I'm a child
+                Enter your wish details in the boxes provided!
             </Header>
 
             <Container>
