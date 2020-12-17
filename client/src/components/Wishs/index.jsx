@@ -34,7 +34,7 @@ const Wishs = () => {
 
       <Container>
         {wishs && wishs.length > 0 ? (
-          <Table striped bordered hover>
+          <table>
             <thead>
               <tr id="titles">
                 <th>My Wish</th>
@@ -56,11 +56,11 @@ const Wishs = () => {
                     {wish.creator}
                   </td>
 
-                  <td>
+                  <td id="weblink">
                     <Link to={wish.websiteLink}>Buy</Link>
                   </td>
 
-                  <td id="info">
+                  <td id="description">
                     {wish.description}
                   </td>
 
@@ -76,7 +76,7 @@ const Wishs = () => {
                 </tr>
               ))}
             </tbody>
-          </Table>
+          </table>
         ) : null}
       </Container>
     </>

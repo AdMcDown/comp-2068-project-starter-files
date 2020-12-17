@@ -7,8 +7,29 @@ body {
     color:blue;
 }
 
-#info {
-    color: crimson;
+table, th, td {
+    border: 1px solid black; 
+    margin-bottom: 20px;
+}
+
+th {
+    background-color: goldenrod;
+}
+
+td {
+    background-color: rgb(250, 230, 114);
+}
+
+#weblink {
+    text-align: center;
+}
+
+#description {
+    width: 50%;
+}
+
+#link-color {
+    text-align: center;
 }
 
 link {
