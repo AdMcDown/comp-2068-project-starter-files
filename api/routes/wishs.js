@@ -5,18 +5,18 @@ const passport = require('passport');
 //, passport.authenticate('jwt', {session: false}) used to authenticate user for actions
 module.exports = router => {
 
-    //GET localhost:4000/quotes
+    //GET localhost:4000/wishs
     router.get('/wishs', index);
 
-    //GET Localhost:4000/quotes/id
+    //GET Localhost:4000/wishs/id
     router.get('/wishs/:id', show);
 
-    //POST localhost:4000/quotes
+    //POST localhost:4000/wishs
     router.post('/wishs', passport.authenticate('jwt', {session: false}), create);
 
-    //POST localhost:4000/quotes/update
+    //POST localhost:4000/wishs/update
     router.post('/wishs/update', passport.authenticate('jwt', {session: false}), update);
 
-    //POST localhost:4000/quotes/destroy
+    //POST localhost:4000/wishs/destroy
     router.post('/wishs/destroy', passport.authenticate('jwt', {session: false}), destroy);
 };

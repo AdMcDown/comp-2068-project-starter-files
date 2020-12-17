@@ -44,10 +44,17 @@ const WishForm = ({ endpoint, preload }) => {
                 setRedirect(true);
             })
             .catch((error) => {
-                setNotification({
-                    type: "danger",
-                    message: `There was an error creating your wish: ${error.message}`
-                });
+                if (!inputs.item) {
+                    setNotification({
+                        type: "warning",
+                        message: "The wish list item field is required!"
+                    });
+                } else {
+                    setNotification({
+                        type: "danger",
+                        message: `There was an error creating your wish: ${error.message}`
+                    });
+                }
             });
     };
 

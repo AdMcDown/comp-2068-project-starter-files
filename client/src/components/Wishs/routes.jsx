@@ -5,6 +5,7 @@ import { UserContext } from '../Authentication/UserProvider';
 import Index from './index';
 import New from './New';
 import Edit from './Edit';
+import Destroy from './Destroy';
 
 const Routes = () => {
     const { user } = useContext(UserContext);
@@ -17,6 +18,7 @@ const Routes = () => {
                 <>
                     <Route exact path="/wishs/new" component={New} />
                     <Route exact path="/wishs/edit/:id" component={Edit} />
+                    <Route exact path="/wishs/destroy/:id" component={Destroy} />
                 </>
             ) : null}
         </Switch>

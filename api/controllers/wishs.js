@@ -9,6 +9,7 @@ exports.create = async (req, res, next) => {
 
         const wsh = await Wish.create({
             creator: user.name,
+            //usersWish: user._id,
             item: item,
             price: price,
             websiteLink: websiteLink,
@@ -35,7 +36,7 @@ exports.show = async (req, res, next) => {
 
 exports.index = async (req, res, next) => {
     try {
-        const wishs = await Wish.find();
+        const wishs = await Wish.find(req.params.user);
         res.status(200).json(wishs);
     } catch(error) {
         next(error);
@@ -60,10 +61,10 @@ exports.update = async (req, res, next) => {
 }
 
 exports.destroy = async (req, res, next) => {
+    console.log(req.body);
     try {
         const { _id } = req.body;
-
-        await Wish.findOneAndDelete({_id});
+    await Wish.findOneAndDelete({ _id: _id });
 
         res.status(200).json({message: 'Your wish was deleted seccuessfully'});
     } catch (error) {

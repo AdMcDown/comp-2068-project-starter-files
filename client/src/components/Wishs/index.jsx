@@ -40,7 +40,10 @@ const Wishs = () => {
               </blockquote>
 
               {user && user.token ? (
-                <Link to={`/wishs/edit/${wish._id}`}>...edit...</Link>
+                <>
+                  <Link to={`/wishs/edit/${wish._id}`}>...edit...</Link>
+                  <Link to={`/wishs/destroy/${wish._id}`}>...delete...</Link>
+                </>
               ) : null}
 
             </>
