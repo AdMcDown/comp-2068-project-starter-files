@@ -34,19 +34,19 @@ const Wishs = () => {
       <Container>
         {wishs && wishs.length > 0 ? (
           wishs.map((wish, i) => (
-            <>
+            <div key={i}>
               <blockquote>
                 {wish.item}: "{wish.description}" ~ {wish.creator}
               </blockquote>
 
               {user && user.token ? (
-                <>
+                <div>
                   <Link to={`/wishs/edit/${wish._id}`}>...edit...</Link>
                   <Link to={`/wishs/destroy/${wish._id}`}>...delete...</Link>
-                </>
+                </div>
               ) : null}
 
-            </>
+            </div>
           ))
         ) : null}
       </Container>
