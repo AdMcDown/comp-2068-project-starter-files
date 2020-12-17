@@ -5,13 +5,13 @@ import Header from '../../shared/Header';
 const Home = () => {
   return (
     <>
-      <Header title="Your title for the Header component block">
+      <Header title="Make your wishes a reality!">
         <p>
-          This paragraph will be the value for <strong>&#123;children&#125;</strong> in the <strong>Header component</strong>.
+          Head on over to the <a href="http://localhost:3000/wishs">Wishs</a> page to begin making your wishlist!
         </p>
 
         <p>
-          The header is editable under <strong>/src/components/Pages/Home/index.jsx</strong>
+          The best way to find out just what the special people in your life are wanting for the holidays!
         </p>
       </Header>
 
@@ -19,10 +19,10 @@ const Home = () => {
         <hr/>
 
         <p>
-          The content is editable under <strong>/src/components/Pages/Home/index.jsx</strong>
+          Created by:<br></br>Adam McNown 200427796<br></br>Luke Murdock 200304037
         </p>
 
-        <p>You home page content!</p>
+        <p>All that copyright junk here i guess?</p>
       </Container>
     </>
   );
