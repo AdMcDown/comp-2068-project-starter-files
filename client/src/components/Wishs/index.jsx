@@ -62,7 +62,7 @@ const Wishs = () => {
                   </td>
 
                   <td id="weblink">
-                    <a href={wish.websiteLink} target="_blank">Buy</a>
+                    <a href={wish.websiteLink} target="_blank" rel="noreferrer">Buy</a>
                   </td>
 
                   <td id="description">

@@ -19,7 +19,7 @@ const Destroy = () => {
             .catch(error => {
                 setNotification(`Couldn't destroy the selected wish due to an error: ${error.message}`);
             });
-    }, [globalStore, id, setNotification]);
+    }, [globalStore, id, user, setNotification]);
 
     return <Redirect to="/wishs" />;
 }

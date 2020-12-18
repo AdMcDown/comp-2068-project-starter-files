@@ -17,7 +17,7 @@ const Home = () => {
         </p>
       </Header>
       <div id="center">
-        <iframe src="https://giphy.com/embed/oyMKeyifOotaw" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/christmas-parks-and-recreation-oyMKeyifOotaw"></a></p>
+        <iframe src="https://giphy.com/embed/oyMKeyifOotaw" width="480" height="270" frameBorder="0" class="giphy-embed" title="holidays" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/christmas-parks-and-recreation-oyMKeyifOotaw">holidays</a></p>
       </div>
       <Container>
         <hr />
