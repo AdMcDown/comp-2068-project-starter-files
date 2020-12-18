@@ -5,16 +5,12 @@ const WishListSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // usersWish: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "User"
-    //   },
     item: {
         type: String,
         required: true
     },
     price: {
-        type: String,
+        type: Number,
         required: false
     },
     websiteLink: {

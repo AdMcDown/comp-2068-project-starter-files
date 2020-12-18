@@ -3,7 +3,7 @@ import { Alert } from 'react-bootstrap';
 
 export const NotificationContext = createContext();
 
-const NotificationProvider = ({children}) => {
+const NotificationProvider = ({ children }) => {
   const [notification, setNotification] = useState(null);
 
   return (
@@ -15,7 +15,9 @@ const NotificationProvider = ({children}) => {
       ) : null}
 
       {children}
+
     </NotificationContext.Provider>
+
   );
 };
 

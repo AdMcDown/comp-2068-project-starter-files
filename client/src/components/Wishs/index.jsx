@@ -4,7 +4,7 @@ import { GlobalStoreContext } from '../shared/Globals';
 import { UserContext } from '../Authentication/UserProvider';
 import Axios from 'axios';
 import Header from '../shared/Header';
-import { Container, Table } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './App.css'
 
@@ -39,6 +39,7 @@ const Wishs = () => {
               <tr id="titles">
                 <th>My Wish</th>
                 <th>Creator</th>
+                <th>Price</th>
                 <th>WebLink</th>
                 <th>Description</th>
                 <th>Action</th>
@@ -48,31 +49,38 @@ const Wishs = () => {
             <tbody>
               {wishs.map((wish, i) => (
                 <tr key={i}>
-                  <td id="info">
+                  <td id="item">
                     {wish.item}
                   </td>
 
-                  <td id="info">
+                  <td id="creator">
                     {wish.creator}
                   </td>
 
+                  <td id="price">
+                    ${wish.price}
+                  </td>
+
                   <td id="weblink">
-                    <Link to={wish.websiteLink}>Buy</Link>
+                    <a href={wish.websiteLink} target="_blank">Buy</a>
                   </td>
 
                   <td id="description">
                     {wish.description}
                   </td>
-
-                  <td id="link-color">
-                    <Link to={`/wishs/edit/${wish._id}`}>
-                      edit
+                  {user && user.token ? (
+                    <td id="link-color">
+                      <Link to={`/wishs/edit/${wish._id}`}>
+                        edit
                     </Link>
                     &nbsp;|&nbsp;
-                    <Link to={`/wishs/destroy/${wish._id}`}>
-                      delete
+                      <Link to={`/wishs/destroy/${wish._id}`}>
+                        delete
                     </Link>
-                  </td>
+                    </td>
+                  ) : (
+                      <td>You must login for this feature</td>
+                    )}
                 </tr>
               ))}
             </tbody>

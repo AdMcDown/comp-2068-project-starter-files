@@ -9,7 +9,6 @@ exports.create = async (req, res, next) => {
 
         const wsh = await Wish.create({
             creator: user.name,
-            //usersWish: user._id,
             item: item,
             price: price,
             websiteLink: websiteLink,

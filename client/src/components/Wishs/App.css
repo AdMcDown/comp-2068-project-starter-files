@@ -1,10 +1,42 @@
+/**********************/
+/*       Body         */
+/**********************/
+
 body {
     background-color: #6290ec;
   }
 
- #titles {
+/**********************/
+/*        Nav         */
+/**********************/
+
+nav {
+    background-color: rgb(93, 168, 99);
+}
+
+/**********************/
+/*       Header       */
+/**********************/
+
+header {
+    border: 50px solid transparent;
+    /* border-radius: 50%; */
     text-align: center;
-    color:blue;
+    background-color: rgb(93, 168, 99);
+    color:rgb(250, 230, 114);
+    border-image-source: url('../shared/img/gift.png');
+    border-image-outset: 20px;
+}
+
+/**********************/
+/*       Table        */
+/**********************/
+
+table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
 }
 
 table, th, td {
@@ -20,13 +52,31 @@ td {
     background-color: rgb(250, 230, 114);
 }
 
+/**********************/
+/*   Table-elements   */
+/**********************/
+
+#titles {
+    text-align: center;
+    color:blue;
+}
+
 #weblink {
     text-align: center;
 }
 
-#description {
-    width: 50%;
+#price {
+    text-align: right;
 }
+
+#description {
+    word-wrap: break-word;
+    width: 500px;
+}
+
+/**********************/
+/*        Link        */
+/**********************/
 
 #link-color {
     text-align: center;
@@ -36,24 +86,9 @@ link {
     color: rgb(93, 168, 99)
 }
 
-header {
-    text-align: center;
-    background-color: rgb(93, 168, 99);
-}
-
-#header-cont {
-    border-radius: 80px;
-    background-color: rgb(93, 168, 99);
-}
-
-nav {
-    background-color: rgb(93, 168, 99);
-}
-
-#new-description {
-    display: block;
-    width: 500px;
-}
+/**********************/
+/*        Giff        */
+/**********************/
 
 #wrapper {
     text-align: center;
@@ -61,4 +96,13 @@ nav {
 
 #wrapper iframe {
     display: inline-block;
+}
+
+/**********************/
+/*       Other        */
+/**********************/
+
+/*changes width of description on new wish page*/
+#new-description {
+    width: 500px; 
 }

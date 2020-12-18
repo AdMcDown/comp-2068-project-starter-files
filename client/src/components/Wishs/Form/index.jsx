@@ -37,7 +37,7 @@ const WishForm = ({ endpoint, preload }) => {
                 if (data) {
                     setNotification({
                         type: "success",
-                        message: "Your wish was updated successfully"
+                        message: "Your wish List was updated successfully"
                     });
                 }
 
@@ -76,7 +76,7 @@ const WishForm = ({ endpoint, preload }) => {
                 <Form.Label>Price:</Form.Label>
                 <Form.Control
                     onChange={handleChange}
-                    name="new-price"
+                    name="price"
                     id="new-price"
                     placeholder="enter cost for item"
                     defaultValue={inputs.price}
@@ -87,7 +87,7 @@ const WishForm = ({ endpoint, preload }) => {
                 <Form.Label>Website</Form.Label>
                 <Form.Control
                     onChange={handleChange}
-                    name="new-website"
+                    name="websiteLink"
                     id="new-website"
                     placeholder="copy a website link to your item"
                     defaultValue={inputs.websiteLink}
