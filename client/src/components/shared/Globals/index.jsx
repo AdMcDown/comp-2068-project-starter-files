@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 export const GlobalStoreContext = createContext();
 
-const GlobalStoreProvider = ({children}) => {
+const GlobalStoreProvider = ({ children }) => {
   const [globalStore, setGlobalStore] = useState({});
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const GlobalStoreProvider = ({children}) => {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === "development") {
       REACT_APP_ENDPOINT = "http://localhost:4000";
     } else {
-      REACT_APP_ENDPOINT = "https://your-heroku-api-address.heroku.com";
+      REACT_APP_ENDPOINT = "https://comp-2068-my-wish-list-project.herokuapp.com/";
     }
     setGlobalStore({ REACT_APP_ENDPOINT, REACT_APP_SOCKET });
   }, []);
