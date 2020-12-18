@@ -1,3 +1,26 @@
+Adam McNown & Luke Murdock
+
+Adam worked on:
+- Most API work
+- Creating repo
+- changing half the variable names
+- working on the delete function
+- helping with CSS
+
+Luke worked on:
+- Most Client work
+- connecting to the repo
+- changing the other half of the variables
+- making content on pages (flow of site with wording and such)
+- Figured out CSS with React
+
+Just register and then use credentials to login
+
+Hope this is to your liking Shaun! Have a great holiday season and lets all hope next year is a better year!
+
+~Cheers~
+Adam & Luke
+
 # Project Starter files
 
 ## Includes:
