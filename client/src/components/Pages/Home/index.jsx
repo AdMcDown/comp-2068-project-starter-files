@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Form } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import Header from '../../shared/Header';
 import { Link } from 'react-router-dom';
+import './style.css'
 
 const Home = () => {
   return (
@@ -15,11 +16,9 @@ const Home = () => {
           The best way to find out just what the special people in your life are wanting for the holidays!
         </p>
       </Header>
-
-      <Form class="row justify-content-center">
+      <div id="center">
         <iframe src="https://giphy.com/embed/oyMKeyifOotaw" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/christmas-parks-and-recreation-oyMKeyifOotaw"></a></p>
-      </Form>
-
+      </div>
       <Container>
         <hr />
 
