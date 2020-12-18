@@ -62,7 +62,7 @@ const UserForm = ({ endpoint, preloadData = {}, buttonLabel }) => {
     ) : (
         <Form onSubmit={handleSubmit}>
           <p>
-            The content is editable under <strong>/src/components/Users/UserForm/index.jsx</strong>
+            Click <strong>register</strong> when done.
           </p>
 
           <Form.Group>
