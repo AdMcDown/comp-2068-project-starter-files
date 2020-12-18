@@ -16,6 +16,18 @@ Luke worked on:
 
 Just register and then use credentials to login
 
+Github with both Client and API
+https://github.com/AdMcDown/comp-2068-project-starter-files
+
+Github with just Client
+https://github.com/AdMcDown/comp-2068-my-wish-list-client
+
+Github with just API
+https://github.com/AdMcDown/comp-2068-my-wish-list-api
+
+Heroku
+https://5fdd17619decd2000828314b--mystifying-ardinghelli-ee3bd0.netlify.app/
+
 Hope this is to your liking Shaun! Have a great holiday season and lets all hope next year is a better year!
 
 ~Cheers~
