@@ -54,3 +54,11 @@ nav {
     display: block;
     width: 500px;
 }
+
+#wrapper {
+    text-align: center;
+}
+
+#wrapper iframe {
+    display: inline-block;
+}

@@ -14,6 +14,8 @@ const Home = () => {
           The best way to find out just what the special people in your life are wanting for the holidays!
         </p>
       </Header>
+     
+      <iframe src="https://giphy.com/embed/oyMKeyifOotaw" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/christmas-parks-and-recreation-oyMKeyifOotaw"></a></p>
 
       <Container>
         <hr/>
